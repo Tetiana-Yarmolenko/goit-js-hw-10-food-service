@@ -26,23 +26,23 @@ const Theme = {
 // функія для зміни теми на сторінці
 function onCheckBoxClick() {
     if (switchBtn.checked) {
-        document.body.classList.add('dark-theme');
-        document.body.classList.remove('light-theme');
-        localStorage.setItem("theme", 'dark-theme');
+        document.body.classList.add(Theme.DARK);
+        document.body.classList.remove(Theme.LIGHT);
+        localStorage.setItem("theme", Theme.DARK);
     }
     else {
-        document.body.classList.add('light-theme');
-        document.body.classList.remove('dark-theme');
-        localStorage.setItem("theme", 'light-theme');
+        document.body.classList.add(Theme.LIGHT);
+        document.body.classList.remove(Theme.DARK);
+        localStorage.setItem("theme", Theme.LIGHT);
     }
 }
 
-
+// збереження теми сторн. при перезавантаженні
 const themeLocalStorage = localStorage.getItem('theme');
 if (themeLocalStorage === Theme.DARK) {
-  document.body.classList.add('dark-theme');
+  document.body.classList.add(Theme.DARK);
   switchBtn.checked = true;
 }
   else {
-    document.body.classList.add('light-theme');
+    document.body.classList.add(Theme.LIGHT);
   }
